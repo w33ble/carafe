@@ -35,11 +35,11 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "@std/esm": {
+  "esm": {
     "cjs": true
   },
   "dependencies": {
-    "@std/esm": "^0.26.0"
+    "esm": "^3.0.17"
   },
   "devDependencies": {
     "codecov": "^3.0.0",
