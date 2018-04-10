@@ -1,0 +1,57 @@
+{
+  "name": "carafe",
+  "version": "0.0.0",
+  "description": "Crazy simple dependency container",
+  "module": "index.mjs",
+  "scripts": {
+    "lint": "eslint \"*.{mjs,js}\" \"src/**/*.{mjs,js}\"",
+    "test": "npm run lint && nyc npm run test:only",
+    "test:only": "node -r @std/esm test/index.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/w33ble/carafe.git"
+  },
+  "keywords": [],
+  "files": [
+    "src/",
+    "index.js",
+    "index.mjs"
+  ],
+  "author": "Joe Fleming (https://github.com/w33ble)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/w33ble/carafe/issues"
+  },
+  "homepage": "https://github.com/w33ble/carafe",
+  "lint-staged": {
+    "*.{mjs,js,json,css}": [
+      "prettier --write"
+    ]
+  },
+  "prettier": {
+    "printWidth": 100,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "@std/esm": {
+    "cjs": true
+  },
+  "dependencies": {
+    "@std/esm": "^0.26.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.9.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-prettier": "^2.3.1",
+    "eslint-plugin-react": "^7.1.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.0.4",
+    "nyc": "^11.6.0",
+    "prettier": "^1.9.0",
+    "tape": "^4.9.0"
+  }
+}
