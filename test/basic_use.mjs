@@ -27,6 +27,15 @@ test('throws adding a dependency twice', t => {
   t.throws(() => di.add('string2'), new RegExp('Dependency already defined'));
 });
 
+test('creates instance when called as a function', t => {
+  t.plan(3);
+  const deps = Carafe();
+  const deps2 = Carafe();
+  t.notEqual(deps, deps2);
+  t.ok(typeof deps === 'object', 'should be an object');
+  t.ok(typeof deps.add === 'function', 'should have an add method');
+});
+
 test('adds and gets dependencies', t => {
   t.plan(1);
 
