@@ -1,13 +1,17 @@
 # carafe
 
-Crazy simple dependency container, using [@travi/ioc](https://github.com/travi/ioc) for a little inspiration.
+Crazy simple dependency container.
 
 > def.
 > a wide-mouthed glass or metal bottle with a lip or spout, for holding and serving dependencies
 
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/w33ble/carafe/master/LICENSE)
 [![npm](https://img.shields.io/npm/v/carafe.svg)](https://www.npmjs.com/package/carafe)
+[![Build Status](https://img.shields.io/travis/w33ble/carafe.svg?branch=master)](https://travis-ci.org/w33ble/carafe)
+[![Coverage](https://img.shields.io/codecov/c/github/w33ble/carafe.svg)](https://codecov.io/gh/w33ble/carafe)
 [![Project Status](https://img.shields.io/badge/status-experimental-orange.svg)](https://nodejs.org/api/documentation.html#documentation_stability_index)
+
+A little inspiration taken from [@travi/ioc](https://github.com/travi/ioc).
 
 ## Usage
 

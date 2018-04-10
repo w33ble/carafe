@@ -5,6 +5,7 @@
   "module": "index.mjs",
   "scripts": {
     "lint": "eslint \"*.{mjs,js}\" \"src/**/*.{mjs,js}\"",
+    "report-coverage": "nyc report --reporter=lcov > coverage.lcov && codecov",
     "test": "npm run lint && nyc npm run test:only",
     "test:only": "node -r @std/esm test/index.mjs"
   },
@@ -41,6 +42,7 @@
     "@std/esm": "^0.26.0"
   },
   "devDependencies": {
+    "codecov": "^3.0.0",
     "eslint": "^4.9.0",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-config-prettier": "^2.9.0",
