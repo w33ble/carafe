@@ -38,6 +38,32 @@ container.restore('water'); // or to restore all mocks, use restore()
 elsewhere(); // fresh and cool
 ```
 
+## Methods
+
+Carafe instances should be `new`ed up, and the instance returns will have the following methods. You can call Carafe() as well, and it will return a new instance for you.
+
+### add(name, payload)
+
+Registered a new dependency by name. `name` should be a string, and the method will throw if it's not.
+
+### get(name)
+
+Returns a registered dependency by name. If there is no matching depdendency, the method will throw.
+
+### inject(dependencies[], function)
+
+Takes an array of named depdendencies, passing them in order as arguments to `function`. Returns whatever `function` returns. 
+
+**NOTE:** Dependencies are only injected at call time, so using `replace` with this syntax isn't useful as the values won't be re-read and replaced with the alternate payload.
+
+### replace(name, payload)
+
+Used to replace a dependency's value in a recoverable way. `replace` can be called multiple times, and the resulting value when `get` is used will always be whatever the last value provided was. Use `restore` to restore the original dependency's payload.
+
+### restore([name])
+
+Used to restore a given dependency to its original registered value, undoing any `replace` calls. If no name is provided, *all* dependencies are restored.
+
 #### License
 
 MIT © [w33ble](https://github.com/w33ble)
