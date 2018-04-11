@@ -5,8 +5,8 @@ let di;
 
 test('setup', t => {
   di = new Carafe();
-  di.add('test1', () => 'test 1');
-  di.add('test2', () => 'test 2');
+  di.register('test1', () => 'test 1');
+  di.register('test2', () => 'test 2');
   t.end();
 });
 

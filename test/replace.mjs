@@ -26,7 +26,7 @@ test('does not throw on unreplaced dependencies', t => {
 test('replaces dependency', t => {
   t.plan(2);
   const expectedReplacement = 'replacement output';
-  di.add(name, () => expected);
+  di.register(name, () => expected);
   t.equal(di.get(name)(), expected);
 
   di.replace(name, () => expectedReplacement);
@@ -42,9 +42,9 @@ test('restores dependency by name', t => {
 test('restores all dependencies', t => {
   t.plan(6);
 
-  di.add('_one_', () => '_one_');
-  di.add('_two_', () => '_two_');
-  di.add('_three_', () => '_three_');
+  di.register('_one_', () => '_one_');
+  di.register('_two_', () => '_two_');
+  di.register('_three_', () => '_three_');
 
   // replace all dependencies
   di.replace('_one_', () => 'replaced _one_');
@@ -68,7 +68,7 @@ test('restores all dependencies', t => {
 test('works with multiple replace calls', t => {
   t.plan(2);
 
-  di.add('replace me', () => 'replace me');
+  di.register('replace me', () => 'replace me');
   di.replace('replace me', () => 'replace me 1');
   di.replace('replace me', () => 'replace me 2');
   di.replace('replace me', () => 'replace me 3');

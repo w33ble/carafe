@@ -19,7 +19,7 @@ export default function Carafe() {
   };
 
   return {
-    add(name, payload) {
+    register(name, payload) {
       if (dependencies.has(name)) throw new Error(`Dependency already defined: ${name}`);
       validateName(name);
       dependencies.set(name, payload);

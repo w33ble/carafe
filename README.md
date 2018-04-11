@@ -42,7 +42,7 @@ elsewhere(); // fresh and cool
 
 Carafe instances should be `new`ed up, and the instance returns will have the following methods. You can call Carafe() as well, and it will return a new instance for you.
 
-### add(name, payload)
+### register(name, payload)
 
 Registered a new dependency by name. `name` should be a string, and the method will throw if it's not.
 
