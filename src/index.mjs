@@ -30,6 +30,12 @@ export default function Carafe() {
       return dependencies.get(name);
     },
 
+    inject(deps, fn) {
+      if (!Array.isArray(deps)) throw new Error('Dependency list must be an array');
+      const resolvedDeps = deps.map(dep => this.get(dep));
+      return fn(...resolvedDeps);
+    },
+
     replace(name, payload) {
       if (!dependencies.has(name)) throw new Error(`Can not replace undefined dependency: ${name}`);
 
