@@ -52,9 +52,7 @@ Returns a registered dependency by name. If there is no matching depdendency, th
 
 ### inject(dependencies[], function)
 
-Takes an array of named depdendencies, passing them in order as arguments to `function`. Returns whatever `function` returns. 
-
-**NOTE:** Dependencies are only injected at call time, so using `replace` with this syntax isn't useful as the values won't be re-read and replaced with the alternate payload.
+Takes an array of named depdendencies, passing them in order as arguments to `function`. Returns the original `function` with the depdendencies partially applied.
 
 ### replace(name, payload)
 
