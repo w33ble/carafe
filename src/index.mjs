@@ -32,8 +32,10 @@ export default function Carafe() {
 
     inject(deps, fn) {
       if (!Array.isArray(deps)) throw new Error('Dependency list must be an array');
-      const resolvedDeps = deps.map(dep => this.get(dep));
-      return fn(...resolvedDeps);
+      return (...args) => {
+        const resolvedDeps = deps.map(dep => this.get(dep));
+        return fn(...resolvedDeps, ...args);
+      };
     },
 
     replace(name, payload) {
