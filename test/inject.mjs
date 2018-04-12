@@ -18,16 +18,44 @@ test('throws without an array', t => {
 test('throws on invalid dependency', t => {
   t.plan(1);
   const invalidName = 'not a real depenency';
-  t.throws(
-    () => di.inject([invalidName], () => {}),
-    new RegExp(`Dependency not defined: ${invalidName}`)
-  );
+
+  // create the injected function
+  const injectedFn = di.inject([invalidName], () => {});
+
+  t.throws(() => injectedFn(), new RegExp(`Dependency not defined: ${invalidName}`));
 });
 
 test('injects provided dependencies', t => {
   t.plan(2);
-  di.inject(['test1', 'test2'], (t1, t2) => {
+
+  // create the injected function
+  const injectedFn = di.inject(['test1', 'test2'], (t1, t2) => {
     t.equal(t1(), 'test 1');
     t.equal(t2(), 'test 2');
   });
+
+  // call the function so the tests execute
+  injectedFn();
+});
+
+test('passes additional args', t => {
+  t.plan(1);
+
+  const injectedFn = di.inject(['test1'], (t1, prefix) => `${prefix}: ${t1()}`);
+
+  t.equal(injectedFn('output'), 'output: test 1');
+});
+
+test('works with replace', t => {
+  t.plan(2);
+
+  const injectedFn = di.inject(['test1'], (t1, prefix) => `${prefix}: ${t1()}`);
+
+  // check the replaced value
+  di.replace('test1', () => 'hello world');
+  t.equal(injectedFn('output'), 'output: hello world');
+
+  // check the restored output
+  di.restore();
+  t.equal(injectedFn('output'), 'output: test 1');
 });
