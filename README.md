@@ -21,7 +21,7 @@ Create a Carafe instance, add dependencies to it, and get them back out where ne
 // provider.mjs
 import Carafe from 'carafe'
 const container = new Carafe();
-container.add('water', () => 'fresh and cool');
+container.register('water', () => 'fresh and cool');
 export default container;
 
 // elsewhere.mjs
