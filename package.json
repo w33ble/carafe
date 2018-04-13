@@ -9,13 +9,21 @@
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "version": "npm run changelog",
     "test": "npm run lint && npm run test:only",
-    "test:only": "nyc --require esm node test/index.mjs"
+    "test:only": "nyc --require esm node test/index.mjs",
+    "prepush": "npm run test"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/w33ble/carafe.git"
   },
-  "keywords": [],
+  "keywords": [
+    "dependency",
+    "dependency injection",
+    "di",
+    "inversion of control",
+    "ioc",
+    "ioc container"
+  ],
   "files": [
     "src/",
     "index.js",
