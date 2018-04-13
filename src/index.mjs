@@ -11,6 +11,13 @@ export default function Carafe() {
   const mockName = name => `${mockPrefix}${name}`;
   const originalName = name => name.replace(mockPrefix, '');
   const isMock = name => new RegExp(`^${mockPrefix}`).test(name);
+  const getType = p => {
+    const type = typeof p;
+    if (type !== 'object') return type;
+    if (Array.isArray(p)) return 'array';
+    if (p === null) return 'null';
+    return type;
+  };
   const restoreDependency = n => {
     if (!dependencies.has(n)) return;
     const payload = dependencies.get(n);
@@ -41,9 +48,17 @@ export default function Carafe() {
     replace(name, payload) {
       if (!dependencies.has(name)) throw new Error(`Can not replace undefined dependency: ${name}`);
 
+      // check the replacement payload type against the original payload type
+      const originalType = getType(dependencies.get(name));
+      if (getType(payload) !== originalType) {
+        // eslint-disable-next-line no-console
+        console.warn(`WARN: replacement payload type does not match original: ${originalType}`);
+      }
+
       // keep a copy of the original value
       const mName = mockName(name);
       if (!dependencies.has(mName)) dependencies.set(mName, dependencies.get(name));
+
       dependencies.set(name, payload);
     },
 
