@@ -23,6 +23,49 @@ test('does not throw on unreplaced dependencies', t => {
   t.doesNotThrow(() => di.restore('has not been replaced'));
 });
 
+test('warns about type mismatch', t => {
+  t.plan(5);
+
+  // spy on console.warn
+  let warnings;
+  const originalWarn = console.warn;
+  console.warn = (...args) => {
+    warnings = args;
+    // originalWarn(...args);
+  };
+
+  // warning message helper
+  const checkWarning = (type, msg) => {
+    const warning = `WARN: replacement payload type does not match original: ${type}`;
+    t.equal(warnings[0], warning, msg)
+  };
+
+  // test replacing various types
+  di.register('function', () => {});
+  di.register('string', 'example');
+  di.register('array', [1,2,3]);
+  di.register('null', null);
+  di.register('object', { example: true });
+
+  di.replace('function', 'string');
+  checkWarning('function', 'should warn about function type');
+
+  di.replace('string', () => {});
+  checkWarning('string', 'should warn about string type');
+
+  di.replace('array', { object: true });
+  checkWarning('array', 'should warn about array type');
+
+  di.replace('null', undefined);
+  checkWarning('null', 'should warn about null type');
+
+  di.replace('object', ['array']);
+  checkWarning('object', 'should warn about object type');
+
+  // restore the console
+  console.warn = originalWarn;
+});
+
 test('replaces dependency', t => {
   t.plan(2);
   const expectedReplacement = 'replacement output';
