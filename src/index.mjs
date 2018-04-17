@@ -2,7 +2,7 @@ export default function Carafe() {
   if (!(this instanceof Carafe)) return new Carafe();
 
   const dependencies = new Map();
-  const mockPrefix = '%MOCK&';
+  const mockPrefix = '%MOCK%';
 
   // helper functions
   const validateName = name => {
