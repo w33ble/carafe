@@ -3,7 +3,7 @@ import Carafe from '../';
 
 let di;
 
-test('setup', t => {
+test('inject setup', t => {
   di = new Carafe();
   di.register('test1', () => 'test 1');
   di.register('test2', () => 'test 2');
@@ -48,14 +48,16 @@ test('passes additional args', t => {
 
 test('works with replace', t => {
   t.plan(2);
+  const di2 = new Carafe(true);
 
-  const injectedFn = di.inject(['test1'], (t1, prefix) => `${prefix}: ${t1()}`);
+  di2.register('test1', () => 'test 1');
+  const injectedFn = di2.inject(['test1'], (t1, prefix) => `${prefix}: ${t1()}`);
 
   // check the replaced value
-  di.replace('test1', () => 'hello world');
+  di2.replace('test1', () => 'hello world');
   t.equal(injectedFn('output'), 'output: hello world');
 
   // check the restored output
-  di.restore();
+  di2.restore();
   t.equal(injectedFn('output'), 'output: test 1');
 });

@@ -5,8 +5,8 @@ let di;
 const name = 'replacable';
 const expected = 'replacable output';
 
-test('setup', t => {
-  di = new Carafe();
+test('replace setup', t => {
+  di = new Carafe(true);
   t.end();
 });
 

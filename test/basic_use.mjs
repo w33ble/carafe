@@ -3,7 +3,7 @@ import Carafe from '../';
 
 let di;
 
-test('setup', t => {
+test('basic use setup', t => {
   di = new Carafe();
   t.end();
 });
