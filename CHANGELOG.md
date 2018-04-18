@@ -1,5 +1,12 @@
 ### Changelog
 
+#### [v0.3.0](https://github.com/w33ble/carafe/compare/v0.2.1...v0.3.0) (18 April 2018)
+- docs: update the readme [`cab3ba3`](https://github.com/w33ble/carafe/commit/cab3ba3b490740faf6a8ad99b4cb68b4c7385462)
+- feat: log warning about replacement type mismatch [`4c0da58`](https://github.com/w33ble/carafe/commit/4c0da5822d3672c886bc93c846686ca6c575191f)
+- docs: update changelog [`216458d`](https://github.com/w33ble/carafe/commit/216458d5c3f91749df19b2bc56be42529b2bbed4)
+- feat: make replacement optional, opt-in [`d3d10d7`](https://github.com/w33ble/carafe/commit/d3d10d745e2461eb848b4127a9e8b82570f183d6)
+- docs: fix quick example [`be9de00`](https://github.com/w33ble/carafe/commit/be9de0046c814f789999010a8d24aa436303f551)
+
 #### [v0.2.1](https://github.com/w33ble/carafe/compare/v0.1.2...v0.2.1) (11 April 2018)
 - fix: rename add to register [`c3be9e2`](https://github.com/w33ble/carafe/commit/c3be9e24e17507ac61ffff0cc0c5ca32ea044930)
 - feat: inject at call time, pass extra args [`aea0e5c`](https://github.com/w33ble/carafe/commit/aea0e5c2f586efa278b078489010a7ae852a726b)
