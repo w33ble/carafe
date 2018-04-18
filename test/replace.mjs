@@ -10,6 +10,16 @@ test('replace setup', t => {
   t.end();
 });
 
+test('throws when replace is not enabled', t => {
+  t.plan(1);
+
+  // replace is off by default
+  const di2 = new Carafe();
+
+  di2.register('test', 'test');
+  t.throws(() => di2.replace('test', 'something else'), /replace\ is\ not\ a\ function/);
+});
+
 test('throws on undefined dependencies', t => {
   t.plan(1);
   t.throws(
@@ -37,13 +47,13 @@ test('warns about type mismatch', t => {
   // warning message helper
   const checkWarning = (type, msg) => {
     const warning = `WARN: replacement payload type does not match original: ${type}`;
-    t.equal(warnings[0], warning, msg)
+    t.equal(warnings[0], warning, msg);
   };
 
   // test replacing various types
   di.register('function', () => {});
   di.register('string', 'example');
-  di.register('array', [1,2,3]);
+  di.register('array', [1, 2, 3]);
   di.register('null', null);
   di.register('object', { example: true });
 
