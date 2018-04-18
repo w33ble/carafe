@@ -1,4 +1,4 @@
-export default function Carafe() {
+export default function Carafe(allowReplace = false) {
   if (!(this instanceof Carafe)) return new Carafe();
 
   const dependencies = new Map();
@@ -25,7 +25,7 @@ export default function Carafe() {
     dependencies.delete(n);
   };
 
-  return {
+  const baseMethods = {
     register(name, payload) {
       if (dependencies.has(name)) throw new Error(`Dependency already defined: ${name}`);
       validateName(name);
@@ -44,7 +44,9 @@ export default function Carafe() {
         return fn(...resolvedDeps, ...args);
       };
     },
+  };
 
+  const replaceMethods = {
     replace(name, payload) {
       if (!dependencies.has(name)) throw new Error(`Can not replace undefined dependency: ${name}`);
 
@@ -75,4 +77,7 @@ export default function Carafe() {
       });
     },
   };
+
+  if (!allowReplace) return baseMethods;
+  return Object.assign({}, baseMethods, replaceMethods);
 }
