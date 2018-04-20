@@ -9,6 +9,7 @@
     "version": "auto-changelog -p && git add CHANGELOG.md",
     "test": "npm run lint && npm run test:only",
     "test:only": "nyc --require esm node test/index.mjs",
+    "precommit": "lint-staged",
     "prepush": "npm run test"
   },
   "repository": {
@@ -35,9 +36,8 @@
   },
   "homepage": "https://github.com/w33ble/carafe",
   "lint-staged": {
-    "*.{mjs,js,json,css}": [
-      "prettier --write"
-    ]
+    "*.{mjs,js}": ["eslint --fix"],
+    "*.{mjs,js,json,css}": ["prettier --write"]
   },
   "prettier": {
     "printWidth": 100,
