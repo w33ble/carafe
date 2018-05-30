@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "eslint \"*.{mjs,js}\" \"src/**/*.{mjs,js}\"",
     "report-coverage": "nyc report --reporter=lcov > coverage.lcov && codecov",
-    "version": "auto-changelog -p && git add CHANGELOG.md",
+    "version": "npm-auto-version",
     "test": "npm run lint && npm run test:only",
     "test:only": "nyc --require esm node test/index.mjs",
     "precommit": "lint-staged",
@@ -61,17 +61,11 @@
       ".mjs"
     ]
   },
-  "auto-changelog": {
-    "output": "CHANGELOG.md",
-    "template": ".changelog_template.hbs",
-    "ignoreCommitPattern": "(chore|test):",
-    "commitLimit": false
-  },
   "dependencies": {
     "esm": "^3.0.17"
   },
   "devDependencies": {
-    "auto-changelog": "^1.4.6",
+    "@w33ble/npm-auto-tools": "*",
     "codecov": "^3.0.0",
     "eslint": "^4.9.0",
     "eslint-config-airbnb": "^16.1.0",
