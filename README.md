@@ -32,14 +32,15 @@ export default container;
 import container from 'provider.mjs';
 
 // get happens in the function so it always gets the current value
-const waterStatus = () => container.get('water')();
+const waterStatus = () => container.get('water');
 export default waterStatus;
+
 
 // status.mjs, alternatively using inject
 import container from 'provider.mjs';
 
 // the function returned always gets the updated dependency
-const waterStatus = container.inject(['water'], (water) => water); 
+const waterStatus = container.inject(['water'], (water) => water);
 export default waterStatus;
 
 
