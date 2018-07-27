@@ -9,8 +9,8 @@
     any-observable "^0.3.0"
 
 "@w33ble/npm-auto-tools@*":
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/@w33ble/npm-auto-tools/-/npm-auto-tools-0.2.0.tgz#e11f38f6592fbdc8fbba70bea1bd64f63dcda453"
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@w33ble/npm-auto-tools/-/npm-auto-tools-0.3.0.tgz#2f1033e186c74b9a414c6ec4c19475d6ec3b6185"
   dependencies:
     auto-authors "^0.1.1"
     auto-changelog "^1.7.0"
