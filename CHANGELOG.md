@@ -1,5 +1,8 @@
 ### Changelog
 
+#### [v0.3.1](https://github.com/w33ble/carafe/compare/v0.3.0...v0.3.1) (27 July 2018)
+- docs: fix typo in readme [`6257121`](https://github.com/w33ble/carafe/commit/625712101542f48490cd8ce9fbc4820c7a5e6be0)
+
 #### [v0.3.0](https://github.com/w33ble/carafe/compare/v0.2.1...v0.3.0) (18 April 2018)
 - docs: update the readme [`cab3ba3`](https://github.com/w33ble/carafe/commit/cab3ba3b490740faf6a8ad99b4cb68b4c7385462)
 - feat: log warning about replacement type mismatch [`4c0da58`](https://github.com/w33ble/carafe/commit/4c0da5822d3672c886bc93c846686ca6c575191f)
@@ -22,4 +25,3 @@
 #### v0.1.0 (10 April 2018)
 - feat: working dependency manager [`a4a637c`](https://github.com/w33ble/carafe/commit/a4a637c775ba8c9d936c7ac6079611d411cb639d)
 - initial commit [`ef82303`](https://github.com/w33ble/carafe/commit/ef8230317c07c79cc95f2c50d45f339d62d525d2)
-
