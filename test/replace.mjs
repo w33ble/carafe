@@ -1,4 +1,5 @@
-import test from 'tape';
+/* eslint no-console: 0 */
+import test from 'tapped';
 import Carafe from '../';
 
 let di;
@@ -17,7 +18,7 @@ test('throws when replace is not enabled', t => {
   const di2 = new Carafe();
 
   di2.register('test', 'test');
-  t.throws(() => di2.replace('test', 'something else'), /replace\ is\ not\ a\ function/);
+  t.throws(() => di2.replace('test', 'something else'), /replace is not a function/);
 });
 
 test('throws on undefined dependencies', t => {

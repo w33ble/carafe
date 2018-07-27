@@ -1,4 +1,4 @@
-import test from 'tape';
+import test from 'tapped';
 import Carafe from '../';
 
 let di;
