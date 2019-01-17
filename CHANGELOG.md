@@ -1,5 +1,7 @@
 ### Changelog
 
+#### [v0.3.2](https://github.com/w33ble/carafe/compare/v0.3.1...v0.3.2) (17 January 2019)
+
 #### [v0.3.1](https://github.com/w33ble/carafe/compare/v0.3.0...v0.3.1) (27 July 2018)
 - docs: fix typo in readme [`6257121`](https://github.com/w33ble/carafe/commit/625712101542f48490cd8ce9fbc4820c7a5e6be0)
 
