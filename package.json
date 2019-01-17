@@ -62,7 +62,7 @@
     ]
   },
   "dependencies": {
-    "esm": "^3.0.17"
+    "esm": "^3.1.0"
   },
   "devDependencies": {
     "@w33ble/npm-auto-tools": "*",
