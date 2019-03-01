@@ -1,5 +1,7 @@
 ### Changelog
 
+#### [v0.5.0](https://github.com/w33ble/carafe/compare/v0.4.0...v0.5.0) (1 March 2019)
+
 #### [v0.4.0](https://github.com/w33ble/carafe/compare/v0.3.2...v0.4.0) (1 March 2019)
 
 #### [v0.3.2](https://github.com/w33ble/carafe/compare/v0.3.1...v0.3.2) (17 January 2019)
