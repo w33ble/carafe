@@ -1,5 +1,5 @@
-import test from 'tapped';
-import Carafe from '../';
+const test = require('tapped');
+const Carafe = require('../');
 
 let di;
 

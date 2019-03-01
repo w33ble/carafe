@@ -1,6 +1,6 @@
 /* eslint no-console: 0 */
-import test from 'tapped';
-import Carafe from '../';
+const test = require('tapped');
+const Carafe = require('../');
 
 let di;
 const name = 'replacable';

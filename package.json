@@ -10,7 +10,7 @@
     "version": "npm-auto-version",
     "pretest": "npm run build",
     "test": "npm run lint && npm run test:only",
-    "test:only": "nyc --require esm node test/index.mjs",
+    "test:only": "nyc node test/index.js",
     "build": "modconv src -d dist",
     "precommit": "lint-staged",
     "prepush": "npm run test"
@@ -58,9 +58,6 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "esm": {
-    "cjs": true
-  },
   "nyc": {
     "extension": [
       ".mjs"
@@ -76,7 +73,6 @@
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-prettier": "^2.3.1",
     "eslint-plugin-react": "^7.1.0",
-    "esm": "^3.1.0",
     "husky": "^0.14.3",
     "lint-staged": "^7.0.4",
     "modconv": "^0.1.2",
