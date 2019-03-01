@@ -1,5 +1,7 @@
 ### Changelog
 
+#### [v0.4.0](https://github.com/w33ble/carafe/compare/v0.3.2...v0.4.0) (1 March 2019)
+
 #### [v0.3.2](https://github.com/w33ble/carafe/compare/v0.3.1...v0.3.2) (17 January 2019)
 
 #### [v0.3.1](https://github.com/w33ble/carafe/compare/v0.3.0...v0.3.1) (27 July 2018)
@@ -25,5 +27,5 @@
 - deps: switch to esm from @std/esm [`c375dcf`](https://github.com/w33ble/carafe/commit/c375dcf8c21b5ff7550499f060250fa69b39fdba)
 
 #### v0.1.0 (10 April 2018)
-- feat: working dependency manager [`a4a637c`](https://github.com/w33ble/carafe/commit/a4a637c775ba8c9d936c7ac6079611d411cb639d)
 - initial commit [`ef82303`](https://github.com/w33ble/carafe/commit/ef8230317c07c79cc95f2c50d45f339d62d525d2)
+- feat: working dependency manager [`a4a637c`](https://github.com/w33ble/carafe/commit/a4a637c775ba8c9d936c7ac6079611d411cb639d)
