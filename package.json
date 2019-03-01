@@ -2,13 +2,16 @@
   "name": "carafe",
   "version": "0.3.2",
   "description": "Crazy simple dependency container",
-  "module": "index.mjs",
+  "module": "src/index.mjs",
+  "main": "dist/index.js",
   "scripts": {
     "lint": "eslint \"*.{mjs,js}\" \"src/**/*.{mjs,js}\"",
     "report-coverage": "nyc report --reporter=lcov > coverage.lcov && codecov",
     "version": "npm-auto-version",
+    "pretest": "npm run build",
     "test": "npm run lint && npm run test:only",
     "test:only": "nyc --require esm node test/index.mjs",
+    "build": "modconv src -d dist",
     "precommit": "lint-staged",
     "prepush": "npm run test"
   },
@@ -26,8 +29,10 @@
   ],
   "files": [
     "src/",
-    "index.js",
-    "index.mjs"
+    "dist/",
+    "AUTHORS.md",
+    "CHANGELOG.md",
+    "LICENSE"
   ],
   "author": "Joe Fleming (https://github.com/w33ble)",
   "license": "MIT",
@@ -61,9 +66,6 @@
       ".mjs"
     ]
   },
-  "dependencies": {
-    "esm": "^3.1.0"
-  },
   "devDependencies": {
     "@w33ble/npm-auto-tools": "*",
     "codecov": "^3.0.0",
@@ -74,8 +76,10 @@
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-prettier": "^2.3.1",
     "eslint-plugin-react": "^7.1.0",
+    "esm": "^3.1.0",
     "husky": "^0.14.3",
     "lint-staged": "^7.0.4",
+    "modconv": "^0.1.2",
     "nyc": "^11.6.0",
     "prettier": "^1.9.0",
     "tapped": "^0.1.0"
